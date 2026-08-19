@@ -47,3 +47,7 @@ function showCall(tier, targets){
 }
 $('#end-call').addEventListener('click',()=>{clearInterval(callTimer);speechSynthesis?.cancel();$('#call-modal').classList.add('hidden');toast('Demo call closed. Dispatch was logged.');});
 if(navigator.geolocation){ navigator.geolocation.getCurrentPosition(p=>{const lat=p.coords.latitude,lon=p.coords.longitude;document.querySelector('.map-label b').textContent=`${Math.abs(lat).toFixed(4)}° ${lat>=0?'N':'S'}, ${Math.abs(lon).toFixed(4)}° ${lon>=0?'E':'W'}`;},()=>{}); }
+
+// Scroll-triggered entrance animation for major sections.
+const revealEls=document.querySelectorAll('.reveal');
+if(revealEls.length){ const io=new IntersectionObserver((entries)=>{ entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('in-view'); io.unobserve(entry.target); } }); },{threshold:.15}); revealEls.forEach(el=>io.observe(el)); }

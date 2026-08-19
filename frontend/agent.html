@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>AI Guardian — How the agent decides</title><link rel="stylesheet" href="css/styles.css"><link rel="stylesheet" href="css/extras.css"><link rel="stylesheet" href="css/agent.css"></head>
+<body>
+  <main class="shell">
+    <nav><a class="brand" href="index.html"><span class="brand-mark">✦</span> SAFETY NET <small>AI Guardian</small></a><div class="nav-right"><a href="index.html" class="nav-link">Dashboard</a><a href="agent.html" class="nav-link active">AI Agent</a></div></nav>
+
+    <section class="agent-hero reveal">
+      <p class="eyebrow">HOW THE AI GUARDIAN DECIDES</p>
+      <h1>Not everything here is an <em>agent.</em></h1>
+      <p>Some parts of Safety Net score and predict. One part actually reasons and acts on its own — deciding when to wait, when to check in, and when to escalate without asking permission first. This page shows exactly which is which.</p>
+      <div class="tag-row"><span class="tag">⌁ Agentic — plans &amp; acts autonomously</span><span class="tag tag-scored">◇ Scored — rule/ML based, no autonomy</span></div>
+    </section>
+
+    <section class="agent-grid reveal">
+      <div class="console">
+        <div class="console-head"><span>ESCALATION AGENT · LIVE REASONING TRACE</span><b>● SIMULATED</b></div>
+        <div id="trace" class="trace"><p class="console-empty">Run a scenario to watch the agent reason step by step, the same way it would on a real trip.</p></div>
+        <div class="console-cta">
+          <button id="run-low">Simulate low-severity stop</button>
+          <button id="run-high" class="ghost">Simulate high-severity stop</button>
+        </div>
+      </div>
+      <div class="side-stack">
+        <div class="tier-card t1"><span class="tier-num">TIER 0</span><h4>Monitor</h4><p>Background signal collection only. No contact, no alerts — the agent is just watching.</p></div>
+        <div class="tier-card t2"><span class="tier-num">TIER 1</span><h4>Check in</h4><p>A private, gentle prompt goes to the user first. The agent always asks before it tells anyone else.</p></div>
+        <div class="tier-card t3"><span class="tier-num">TIER 2 → 3</span><h4>Escalate</h4><p>No response, or signals compound: the agent independently calls the guardian, then the emergency contact, with a live location — no human approves each step.</p></div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <p class="eyebrow" style="margin-top:6px">SYSTEM BREAKDOWN</p>
+      <div class="arch-row">
+        <div class="arch-card agentic"><span class="dot"></span><b class="tag">AGENTIC</b><h4>Escalation Agent</h4><p>Observes signals over time, weighs severity, chooses a response tier, and calls tools (check-in, voice dispatch, SMS) in sequence without a human approving each step. This is the one part of the system making autonomous decisions.</p></div>
+        <div class="arch-card scored"><span class="dot"></span><b class="tag tag-scored">SCORED</b><h4>Route Safety Index</h4><p>A weighted score (lighting, foot traffic, verified safe havens) computed once when a route is requested. No ongoing decisions — closer to a recommendation engine than an agent.</p></div>
+        <div class="arch-card scored"><span class="dot"></span><b class="tag tag-scored">SCORED</b><h4>Anomaly Detection</h4><p>Threshold-based checks on GPS/accelerometer data (stopped too long, off-route too far). Flags conditions for the Escalation Agent to reason over — it doesn't decide anything itself.</p></div>
+      </div>
+    </section>
+
+    <a class="back-link reveal" href="index.html">← Back to dashboard</a>
+  </main>
+  <script src="js/agent.js"></script>
+</body></html>

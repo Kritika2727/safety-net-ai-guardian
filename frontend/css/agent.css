@@ -1,0 +1,56 @@
+/* AI Agent page — decision console */
+.agent-hero{padding:56px 0 20px;max-width:720px}
+.agent-hero .eyebrow{color:#638077}
+.agent-hero h1{font:700 44px/1.12 'Playfair Display',serif;letter-spacing:-1.5px;margin:0 0 14px}
+.agent-hero h1 em{color:var(--green);font-style:normal}
+.agent-hero p{font-size:15px;line-height:1.7;color:#5e716d;max-width:600px}
+
+.tag-row{display:flex;gap:10px;margin:22px 0 0;flex-wrap:wrap}
+.tag{font:9px 'DM Mono';letter-spacing:1px;padding:7px 11px;border-radius:99px;background:#edf7f2;color:#176f5a;border:1px solid #d6ebe1}
+.tag.tag-scored{background:#f3f0fa;color:#5b4bb0;border-color:#e2dcf4}
+
+.agent-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;margin:38px 0 20px}
+.console{background:var(--navy);border-radius:10px;color:#eaf4ef;padding:26px;min-height:420px;box-shadow:0 20px 45px #143b4b28;position:relative;overflow:hidden}
+.console:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% -10%,#1d5d54 0,transparent 60%);pointer-events:none}
+.console-head{display:flex;justify-content:space-between;align-items:center;font:10px 'DM Mono';letter-spacing:1.2px;color:#9bb8b0;border-bottom:1px solid #23495a;padding-bottom:14px;margin-bottom:16px}
+.console-head b{color:#8ee2c8}
+.trace{display:flex;flex-direction:column;gap:0;min-height:280px}
+.trace-line{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed #1e4451;opacity:0;transform:translateY(6px);animation:traceIn .4s ease forwards}
+.trace-line:last-child{border-bottom:0}
+.trace-tag{flex:0 0 auto;font:9px 'DM Mono';letter-spacing:.5px;padding:3px 8px;border-radius:4px;height:fit-content;white-space:nowrap}
+.trace-tag.signal{background:#1e3f4d;color:#8fc7e0}
+.trace-tag.reason{background:#20342b;color:#8ee2c8}
+.trace-tag.tool{background:#3a2f1c;color:#e8c07d}
+.trace-tag.decision{background:#3a2020;color:#e89d9d}
+.trace-text{font-size:12.5px;line-height:1.6;color:#d3e6df}
+.trace-text b{color:#fff}
+.console-cta{display:flex;gap:10px;margin-top:18px;position:relative;z-index:1}
+.console-cta button{border:0;border-radius:6px;padding:11px 16px;font:700 11px Manrope;cursor:pointer;background:var(--green);color:#fff;transition:transform .2s ease,box-shadow .2s ease}
+.console-cta button:hover{transform:translateY(-2px);box-shadow:0 8px 18px #0004}
+.console-cta button.ghost{background:#173946;color:#a9c9c0;border:1px solid #2a5464}
+.console-empty{color:#82a19a;font-size:12px;padding:20px 0}
+
+.side-stack{display:flex;flex-direction:column;gap:14px}
+.tier-card{background:#fff;border:1px solid var(--line);border-radius:9px;padding:16px 18px;transition:transform .25s ease,box-shadow .25s ease}
+.tier-card:hover{transform:translateY(-3px);box-shadow:0 12px 24px #183c4918}
+.tier-card .tier-num{font:10px 'DM Mono';letter-spacing:1px;color:#8a9a95}
+.tier-card h4{margin:6px 0 5px;font:600 15px 'Playfair Display'}
+.tier-card p{margin:0;font-size:11.5px;line-height:1.55;color:#66807a}
+.tier-card.t1{border-left:3px solid #3cbd89}
+.tier-card.t2{border-left:3px solid #eab85c}
+.tier-card.t3{border-left:3px solid #c45050}
+
+.arch-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0 50px}
+.arch-card{background:#fff;border:1px solid var(--line);border-radius:9px;padding:18px;transition:transform .25s ease,box-shadow .25s ease}
+.arch-card:hover{transform:translateY(-4px);box-shadow:0 14px 26px #183c4918}
+.arch-card .dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:7px}
+.arch-card.agentic .dot{background:#3cbd89}
+.arch-card.scored .dot{background:#5b4bb0}
+.arch-card h4{margin:10px 0 6px;font:600 14px Manrope}
+.arch-card p{margin:0;font-size:11.5px;line-height:1.6;color:#66807a}
+
+.back-link{display:inline-flex;align-items:center;gap:6px;font:10px 'DM Mono';color:#638077;text-decoration:none;letter-spacing:.5px;margin-top:8px}
+.back-link:hover{text-decoration:underline}
+
+@keyframes traceIn{to{opacity:1;transform:translateY(0)}}
+@media(max-width:860px){.agent-grid,.arch-row{grid-template-columns:1fr}.agent-hero h1{font-size:34px}}
